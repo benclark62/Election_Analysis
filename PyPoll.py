@@ -82,6 +82,3 @@ with open(file_to_load) as election_data:
         f"Winning Percentage: {winning_percentage:.1f}%\n"
         f"------------------\n")
     print(winning_candidate_summary)
-
-# 3. Print the total rows
-print(candidate_votes)
