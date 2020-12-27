@@ -36,20 +36,21 @@ The Python code utilized in this audit can be repurposed to support the analysis
 
 Our analysis includes county-level performance.  Refernces to county could easily be modified to reference a region, district, or city. The code below builds the *county_list* to include all unique counties that were represented by voters in the election and then counts votes attributed to each county (*county_votes*).  This functionality could easily be applied to other geographic identifiers.
 
+If a county does not match any existing county in the county list,
   
-  If a county does not match any existing county in the county list,
-  
-  *if county_name not in county_list:*
-  
-      Add the existing county to the list of counties.
-      *county_list.append(county_name)*
-      
-      Begin tracking the county's vote count.
-      *county_votes[county_name] = 0*
-  
-  Add a vote to that county's vote count.
-  *county_votes[county_name] += 1*
+```if county_name not in county_list:```
 
+Add the existing county to the list of counties.
+  
+```county_list.append(county_name)```
+  
+Begin tracking the county's vote count.
+    
+```county_votes[county_name] = 0```
+    
+Add a vote to that county's vote count.
+  
+```county_votes[county_name] += 1```
 
 While this election featured three candidates, this code will automatically build the list of potential candidates (*candidate_options* variable) to reflect all instances of a candidate's name.  The commands below will continue to add a new *candidate_name* to the *candidate_options* list if it is not already currently reflected in the *candidate_options* list.  
 
