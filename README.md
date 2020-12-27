@@ -9,7 +9,7 @@ Through a partnerhsip with the Colorado Board of Elections, we were tasked with 
 5. Determine the winner fo the election based on popular vote count. 
 
 
-## Election-Audit Results
+## Election Audit Results
 The analysis of the election show that:
 - There were **369,711** votes cast in the election
 
@@ -31,7 +31,7 @@ The analysis of the election show that:
 - The winner of the election was:
   - Diana DeGette, who recieved **272,892 votes**, representing **73.8%** of total votes cast.
 
-## Election-Audit Summary
+## Election Audit Summary
 Now complete, the Python code utilized in this audit can be leveraged to conduct analysis on other election data that is stored in .CSV files.  The variables were designed to analyze the frequency of key election inputs - unique vote counts, candidate names, geographic identifiers - that can easily be applied to different datasets, presenting a licensing opportunity for the Colorado Board of Elections.
 
 Our analysis includes county-level performance.  Refernces to county could easily be modified to reference a region, district, or city. The code below builds the *county_list* to include all unique counties that were represented by voters in the election and then counts votes attributed to each county (*county_votes*).  This functionality could easily be applied to other geographic identifiers by changing variables, lists, dictionaries, and referenced columns in the existing code structure.
