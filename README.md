@@ -34,7 +34,7 @@ The analysis of the election show that:
 ## Election-Audit Summary
 The Python code utilized in this audit can be repurposed to support the analysis of other election data that is stored in .CSV files.  The variables were designed to analyze the frequency of key election inputs - unique vote counts, candidate names, geographic identifiers - that can easily be modified to tally different information.  
 
-Our analysis includes county-level performance.  Refernces to county could easily be modified to reference a region, district, or city. The code below builds the *county_list* to include all unique counties that were represented by voters in the election and then counts votes attributed to each county (*county_votes*).  This functionality could easily be applied to other geographic identifiers.
+Our analysis includes county-level performance.  Refernces to county could easily be modified to reference a region, district, or city. The code below builds the *county_list* to include all unique counties that were represented by voters in the election and then counts votes attributed to each county (*county_votes*).  This functionality could easily be applied to other geographic identifiers by changing variables, lists, dictionaries, and referenced columns in the existing code structure.
 
 Determine if a county matches any existing county in the county list.
   
@@ -52,7 +52,7 @@ Add a vote to that county's vote count while cycling through each row in the .CS
   
 ```county_votes[county_name] += 1```
 
-While this election featured three candidates, this code will automatically build the list of potential candidates (*candidate_options* variable) to reflect all instances of a candidate's name.  The commands below will continue to add a new *candidate_name* to the *candidate_options* list if it is not already currently reflected in the *candidate_options* list.  
+While this election featured three candidates, this code will automatically build the list of potential candidates (*candidate_options* variable) to reflect all unique instances of a candidate's name.  The commands below will continue to add a new *candidate_name* to the *candidate_options* list if it is not already  reflected in the *candidate_options* list.  
 
   
 If the candidate does not match any existing candidate,
@@ -63,7 +63,7 @@ Add the candidate name to the candidate list.
       
 ```candidate_options.append(candidate_name)```
 
-One potential modification will be linked to the data structure in the .CSV file. Our data captures *county_name* in the second column (*county_name = row[1]*) and *candidate_name* in the third column (*candidate_name = row[2]*). This could be quikcly updated to reference a different column if geograhpic or candidate information is captured somewhere else in the data file.
+One required modification would be tied to the data structure in the .CSV file. Our data captures *county_name* in the second column (*county_name = row[1]*) and *candidate_name* in the third column (*candidate_name = row[2]*). This could be quickly updated to reference a different column if geograhpic or candidate information is captured elsewhere in the data file.
 
 ## Resources
 - Data source: election_results.csv
